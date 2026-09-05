@@ -1,0 +1,31 @@
+name: Extract SJTU Level3 Official ZIPs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/extract-sjtu-level3-official.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download official level 3 ZIP files
+        run: |
+          mkdir -p official-extracted/competition official-extracted/manual
+          curl -L --fail --retry 3 -o /tmp/RG3_J1.1_20250916.zip https://gjzs.sjtu.edu.cn/uploads/addons/skill/RG3_J1.1_20250916.zip
+          curl -L --fail --retry 3 -o /tmp/4-04-05-05_3_20250701.zip https://gjzs.sjtu.edu.cn/uploads/addons/skill/4-04-05-05_3_20250701.zip
+          unzip -o /tmp/RG3_J1.1_20250916.zip -d official-extracted/competition
+          unzip -o /tmp/4-04-05-05_3_20250701.zip -d official-extracted/manual
+          find official-extracted -type f | sort > official-extracted/FILELIST.txt
+      - name: Upload extracted files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sjtu-level3-official-extracted
+          path: official-extracted/
+          if-no-files-found: error
+          retention-days: 7
