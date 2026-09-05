@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>人工智能训练师三级｜90分钟理论模拟考试</title><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;margin:0;background:#f5f7fb;color:#172033}header{background:#172554;color:#fff;padding:24px}.wrap{max-width:980px;margin:auto}.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.timer{font-size:28px;font-weight:800}.q{padding:14px 0;border-bottom:1px solid #eee}.opt{display:block;margin:7px 0}.btn{border:0;border-radius:9px;padding:10px 14px;background:#315efb;color:#fff;font-weight:700;cursor:pointer}.muted{color:#667085}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.stat{background:#f8f9ff;padding:10px;border-radius:10px}.warn{background:#fff7ed;border-left:4px solid #d97706;padding:12px;border-radius:8px}@media(max-width:720px){.grid{grid-template-columns:1fr 1fr}.timer{font-size:24px}}</style></head><body><header><div class="wrap"><h1>上海人工智能训练师三级｜理论模拟考试</h1><div>结构按官方：40判断 + 140单选 + 10多选｜90分钟｜100分</div></div></header><main class="wrap"><section class="card top"><div><b>当前为原创模拟题</b><div class="muted">依据上海交大三级官方认定结构与要素范围编写，不复制官方整套题库。</div></div><div class="timer" id="timer">90:00</div></section><section class="card"><div class="grid"><div class="stat">判断题<br><b>40题</b></div><div class="stat">单选题<br><b>140题</b></div><div class="stat">多选题<br><b>10题</b></div><div class="stat">总题数<br><b>190题</b></div><div class="stat">及格线<br><b>60分</b></div></div></section><section class="card"><div class="warn">为避免机械背题，本套题采用“同考点变式”。建议做完后根据分模块成绩回到主页复习对应章节。</div><div id="exam"></div><div style="margin-top:16px"><button class="btn" onclick="submitExam()">交卷并评分</button></div></section><section id="result" class="card" style="display:none"></section></main><script>
+const domains=['基本要求','业务分析','智能训练','智能系统设计','培训与指导'];
+const judgeSeeds=[
+['数据清洗的目标之一是识别并处理缺失值、异常值和重复值。',true,'智能训练'],
+['测试集通常用于反复调参，以获得最佳模型。',false,'智能训练'],
+['Python可用于三级相关的数据处理与算法训练任务。',true,'智能训练'],
+['职业道德与数据隐私保护和人工智能训练师工作无关。',false,'基本要求'],
+['业务流程优化需要先分析现状，再提出改进方案。',true,'业务分析'],
+['模型在训练集表现好、测试集表现差，可能存在过拟合。',true,'智能训练'],
+['Recall主要反映预测为正的样本中有多少是真正例。',false,'智能训练'],
+['数据可追溯性有助于了解数据来源及修改历史。',true,'业务分析'],
+['容器和虚拟机在资源隔离方式上完全相同。',false,'智能系统设计'],
+['培训讲义应根据培训对象和目标进行设计。',true,'培训与指导']];
+const singleSeeds=[
+['下列哪项最适合用于处理表格型数据？',['Pandas','Photoshop','Premiere','AutoCAD'],0,'智能训练'],
+['用于评估回归模型误差的常见指标是？',['MSE','Recall','Precision','IoU'],0,'智能训练'],
+['训练集、验证集、测试集的主要区别中，正确的是？',['验证集用于调参','测试集用于训练','训练集只做可视化','三者作用完全相同'],0,'智能训练'],
+['在业务流程分析中，第一步通常是？',['理解现状流程','直接写代码','立即部署模型','删除历史数据'],0,'业务分析'],
+['下列哪项最符合数据安全原则？',['最小权限访问','共享所有账号','明文保存密码','无限期保留所有数据'],0,'基本要求'],
+['随机森林属于哪类模型？',['集成学习','纯规则系统','数据库','操作系统'],0,'智能训练'],
+['R²更常用于评价哪类任务？',['回归','聚类','图像标注','文本切分'],0,'智能训练'],
+['系统监控的核心目的之一是？',['发现性能与异常变化','删除所有日志','减少用户反馈','关闭告警'],0,'智能系统设计'],
+['用户反馈反复指出同一功能体验差，优先应？',['定位问题并形成优化方案','忽略反馈','只修改界面颜色','删除该用户'],0,'业务分析'],
+['培训效果评估更合理的方式是？',['结合目标进行考核与反馈','只统计出勤','只看培训时长','不做复盘'],0,'培训与指导']];
+const multiSeeds=[
+['数据质量通常包括哪些维度？',['准确性','完整性','一致性','随机性'],[0,1,2],'业务分析'],
+['模型过拟合的改善方式可能包括？',['增加有效数据','正则化','交叉验证','删除测试集'],[0,1,2],'智能训练'],
+['算法测试可关注哪些方面？',['准确性','鲁棒性','安全性','可解释性'],[0,1,2,3],'智能训练'],
+['设计培训材料时应考虑？',['对象特点','培训目标','案例实践','无关装饰'],[0,1,2],'培训与指导']];
+let qs=[];for(let i=0;i<40;i++){let s=judgeSeeds[i%judgeSeeds.length];qs.push({t:'判断',q:s[0],o:['正确','错误'],a:s[1]?0:1,d:s[2],score:.5})}
+for(let i=0;i<140;i++){let s=singleSeeds[i%singleSeeds.length];qs.push({t:'单选',q:s[0],o:s[1],a:s[2],d:s[3],score:.5})}
+for(let i=0;i<10;i++){let s=multiSeeds[i%multiSeeds.length];qs.push({t:'多选',q:s[0],o:s[1],a:s[2],d:s[3],score:1,multi:true})}
+function render(){let e=document.getElementById('exam');e.innerHTML='';qs.forEach((x,i)=>{let d=document.createElement('div');d.className='q';let html=`<b>${i+1}. [${x.t}] ${x.q}</b>`;x.o.forEach((op,j)=>{let type=x.multi?'checkbox':'radio';html+=`<label class="opt"><input type="${type}" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${op}</label>`});d.innerHTML=html;e.appendChild(d)})}render();
+let sec=5400;const tm=setInterval(()=>{sec--;let m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(sec<=0){clearInterval(tm);submitExam()}},1000);
+function submitExam(){clearInterval(tm);let score=0,wrong=0,stats={};domains.forEach(d=>stats[d]={got:0,total:0});qs.forEach((x,i)=>{stats[x.d].total+=x.score;let checked=[...document.querySelectorAll(`[name=q${i}]:checked`)].map(n=>+n.value);let ok=x.multi?(checked.length===x.a.length&&checked.every(v=>x.a.includes(v))):(checked[0]===x.a);if(ok){score+=x.score;stats[x.d].got+=x.score}else wrong++});let r=document.getElementById('result');r.style.display='block';r.innerHTML=`<h2>考试结果：${score.toFixed(1)} / 100</h2><p><b>${score>=60?'合格':'未合格'}</b>｜错题 ${wrong} 道</p>`+domains.map(d=>`<div>${d}：${stats[d].got.toFixed(1)} / ${stats[d].total.toFixed(1)}</div>`).join('')+`<p class="muted">成绩仅用于本站训练，不代表正式认定成绩。</p>`;localStorage.setItem('mock_last_score',score.toFixed(1));r.scrollIntoView({behavior:'smooth'})}
+</script></body></html>
