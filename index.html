@@ -1,88 +1,180 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>上海人工智能训练师三级｜备考学习系统</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>上海人工智能训练师三级｜完整备考学习系统</title>
 <style>
-:root{--bg:#f6f7fb;--card:#fff;--text:#182230;--muted:#667085;--line:#e6e8ec;--accent:#315efb;--accent2:#6c7cff;--ok:#129a74;--warn:#d97706;--danger:#c62828}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
-header{background:linear-gradient(135deg,#1d2b64,#315efb);color:#fff;padding:46px 20px 34px}.wrap{max-width:1120px;margin:auto}h1{margin:8px 0;font-size:34px}.subtitle{opacity:.9;line-height:1.7}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.16);font-size:12px}
-nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:8px;overflow:auto;padding:10px 14px}nav a{white-space:nowrap;text-decoration:none;color:#344054;padding:8px 12px;border-radius:9px}nav a:hover{background:#eef2ff;color:var(--accent)}
-main{padding:26px 16px 70px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 18px rgba(16,24,40,.04)}.span3{grid-column:span 3}.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}
-.metric{font-size:30px;font-weight:760;margin-top:8px}.muted,small{color:var(--muted)}.progress{height:11px;background:#eef1f6;border-radius:999px;overflow:hidden;margin-top:12px}.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}h2{margin:0;font-size:24px}h3{margin:0 0 8px}
-.hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}.system-card{padding:22px;border-radius:16px;color:#fff;min-height:180px;display:flex;flex-direction:column;justify-content:space-between}.theory{background:linear-gradient(135deg,#2643a7,#5674ff)}.practice{background:linear-gradient(135deg,#096b5b,#16a085)}.system-card button{align-self:flex-start;background:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
-.module{border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0;background:#fcfcfd}.module-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.pill{padding:4px 9px;border-radius:999px;background:#eef2ff;color:#3149c6;font-size:12px}.pill.green{background:#ecfdf3;color:#067647}.lesson-list{margin:10px 0 0;padding-left:20px;line-height:1.9}.btn{border:0;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}.btn.secondary{background:#eef2ff;color:#3048bd}.btn.green{background:var(--ok)}
-.quiz .option{display:block;width:100%;text-align:left;background:#fff;color:#344054;border:1px solid var(--line);margin:8px 0;padding:10px 12px;border-radius:10px;cursor:pointer}.quiz .option:hover{border-color:var(--accent);background:#f8f9ff}.answer{display:none;margin-top:10px;padding:12px;background:#ecfdf3;border-radius:10px;color:#067647}.wrong{background:#fff3f2!important;color:#b42318!important}.case{border-left:4px solid var(--ok);background:#f7fffb;padding:14px;border-radius:10px;margin:12px 0}.score{background:#fffaeb;border:1px solid #fedf89;padding:12px;border-radius:10px}.steps{line-height:1.8}.check-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f0f1f3}.check-row input{width:18px;height:18px}.hidden{display:none}.tabbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabbar button{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;cursor:pointer}.tabbar button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-footer{text-align:center;color:var(--muted);padding:28px}@media(max-width:760px){.span3,.span4,.span6,.span8,.span12{grid-column:span 12}.hero-cards{grid-template-columns:1fr}h1{font-size:28px}.card{padding:16px}}
+:root{--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#667085;--line:#e5e7eb;--blue:#315efb;--green:#0f9f78;--orange:#d97706;--red:#c62828}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}header{background:linear-gradient(135deg,#172554,#315efb);color:white;padding:46px 18px}.wrap{max-width:1160px;margin:auto}h1{margin:8px 0;font-size:34px}h2{margin:0 0 14px}h3{margin:0 0 8px}.sub{opacity:.9}.badge,.pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;color:#3547bd;font-size:12px}.badge{background:rgba(255,255,255,.16);color:white}nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}nav .wrap{display:flex;gap:6px;overflow:auto;padding:9px 12px}nav a{text-decoration:none;color:#344054;white-space:nowrap;padding:8px 10px;border-radius:8px}nav a:hover{background:#eef2ff;color:var(--blue)}main{padding:22px 14px 60px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}.c3{grid-column:span 3}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 16px rgba(16,24,40,.04)}.metric{font-size:30px;font-weight:760}.muted,small{color:var(--muted)}.progress{height:10px;border-radius:99px;background:#edf0f5;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,#315efb,#6c7cff);width:0}.hero2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.hero{border-radius:16px;padding:20px;color:white}.hb{background:linear-gradient(135deg,#2942a9,#5f7cff)}.hg{background:linear-gradient(135deg,#087466,#14a989)}.ho{background:linear-gradient(135deg,#9a5b06,#e09a2e)}.hp{background:linear-gradient(135deg,#6b3fa0,#9f67d8)}.module{border:1px solid var(--line);border-radius:14px;padding:15px;margin:11px 0;background:#fcfcfd}.module ul{margin:8px 0}.focus{background:#fff8e8;border-left:4px solid var(--orange);padding:10px 12px;border-radius:8px}.official{border-left:4px solid var(--blue);padding:12px 14px;background:#f7f9ff;border-radius:10px;margin:10px 0}.official a{color:var(--blue);font-weight:650}.code{background:#101828;color:#e6edf7;padding:14px;border-radius:12px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;white-space:pre}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button,.btn{border:0;border-radius:10px;padding:9px 13px;font-weight:650;cursor:pointer}.tabs button{background:#f1f3f7;color:#344054}.tabs button.active,.btn{background:var(--blue);color:#fff}.btn.green{background:var(--green)}.btn.ghost{background:#eef2ff;color:#3047bd}.qopt{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);padding:10px 12px;margin:7px 0;border-radius:10px;cursor:pointer}.qopt:hover{border-color:var(--blue);background:#f8f9ff}.ans{display:none;padding:11px;border-radius:10px;background:#ecfdf3;color:#067647;margin:10px 0}.case{border-left:4px solid var(--green);padding:13px;background:#f5fffb;border-radius:9px;margin:10px 0}.score{padding:11px;background:#fffaeb;border:1px solid #fedf89;border-radius:10px}.check{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f1f2f4}.check input{width:18px;height:18px}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:9px;border-bottom:1px solid var(--line);text-align:left}.tag{font-size:12px;background:#ecfdf3;color:#067647;padding:3px 7px;border-radius:999px}.warn{color:#b54708}.hidden{display:none}footer{text-align:center;color:var(--muted);padding:24px}@media(max-width:780px){.c3,.c4,.c6,.c8,.c12{grid-column:span 12}.hero2{grid-template-columns:1fr}h1{font-size:28px}.card{padding:16px}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><span class="badge">上海 · 人工智能训练师三级（高级工）</span><h1>理论 + 实操备考学习系统</h1><div class="subtitle">30天计划｜理论章节｜专项刷题｜错题记录｜实操任务｜评分点｜模拟考试</div></div></header>
-<nav><div class="wrap"><a href="#dashboard">学习看板</a><a href="#systems">学习系统</a><a href="#theory-system">理论系统</a><a href="#practice-system">实操系统</a><a href="#quiz">专项刷题</a><a href="#plan">30天计划</a></div></nav>
+<header><div class="wrap"><span class="badge">上海 · 人工智能训练师三级（高级工）</span><h1>完整备考学习系统</h1><div class="sub">官方资料｜理论体系｜Python/Pandas编码｜实操训练｜专项题库｜综合模拟｜30天计划</div></div></header>
+<nav><div class="wrap"><a href="#dash">看板</a><a href="#official">官方资料</a><a href="#theory">理论</a><a href="#coding">编码</a><a href="#practice">实操</a><a href="#quiz">题库</a><a href="#mock">模拟</a><a href="#plan">30天计划</a></div></nav>
 <main class="wrap">
-<section id="dashboard" class="grid">
-<div class="card span3"><small>总学习完成度</small><div class="metric" id="pct">0%</div><div class="progress"><div class="bar" id="bar"></div></div></div>
-<div class="card span3"><small>理论模块</small><div class="metric"><span id="theoryDone">0</span>/6</div></div>
-<div class="card span3"><small>实操模块</small><div class="metric"><span id="practiceDone">0</span>/6</div></div>
-<div class="card span3"><small>考试目标</small><div class="metric">≥60分</div><small>理论与实操分别合格</small></div>
-</section>
+<section id="dash" class="grid"><div class="card c3"><small>学习总进度</small><div class="metric" id="pct">0%</div><div class="progress"><div id="bar" class="bar"></div></div></div><div class="card c3"><small>理论章节</small><div class="metric"><span id="tdone">0</span>/8</div></div><div class="card c3"><small>实操任务</small><div class="metric"><span id="pdone">0</span>/8</div></div><div class="card c3"><small>错题数</small><div class="metric" id="wrong">0</div></div></section>
 
-<section id="systems" class="card" style="margin-top:16px"><div class="section-title"><h2>双系统学习入口</h2><span class="muted">建议：理论 60% 时间 + 实操 40% 时间</span></div><div class="hero-cards">
-<div class="system-card theory"><div><h2>理论学习系统</h2><p>6大知识域，按“学 → 记 → 练 → 复盘”推进。</p></div><button onclick="location.href='#theory-system'">进入理论系统</button></div>
-<div class="system-card practice"><div><h2>实操训练系统</h2><p>6类典型任务，按“任务 → 步骤 → 评分点 → 参考答案”训练。</p></div><button onclick="location.href='#practice-system'">进入实操系统</button></div>
-</div></section>
+<section class="card" style="margin-top:15px"><div class="hero2"><div class="hero hb"><h2>理论学习</h2><div>8大知识域，按三级工作要求组织。</div></div><div class="hero hg"><h2>实操训练</h2><div>数据处理、标注、指标、模型诊断、综合业务案例。</div></div><div class="hero ho"><h2>编码专项</h2><div>Python、Pandas、指标计算、基础模型训练和结果评价。</div></div><div class="hero hp"><h2>官方资料</h2><div>人社部国家职业技能标准 + 新职业在线课程 + 上海评价信息。</div></div></div></section>
 
-<section id="theory-system" class="card" style="margin-top:16px"><div class="section-title"><h2>理论学习系统</h2><span class="pill">6大模块</span></div><div id="theoryModules"></div></section>
+<section id="official" class="card" style="margin-top:15px"><h2>官方备考资料专区</h2><p class="muted">以下均为官方或政府主管部门公开资料。建议按“职业标准 → 官方课程 → 上海本地评价通知”的顺序学习。</p>
+<div class="official"><b>1. 人社部《人工智能训练师国家职业技能标准（2021年版）》</b><br>职业编码 4-04-05-05，是确定三级考试知识与技能范围的核心依据。<br><a href="https://www.mohrss.gov.cn/xxgk2020/fdzdgknr/rcrs_4225/jnrc/202112/W020211227626977039770.pdf" target="_blank">打开国家职业技能标准 PDF</a></div>
+<div class="official"><b>2. 人社部新职业在线学习平台：人工智能训练师</b><br>官方课程约42.5课时，覆盖AI基础、数据预处理、图像/视频/语音/文本标注、数据分类统计、智能系统使用与运维。<br><a href="https://xzy.mohrss.gov.cn/lesson/167" target="_blank">打开官方在线课程</a></div>
+<div class="official"><b>3. 人社部人工智能通识课程</b><br>适合补基础概念、行业应用和AI发展趋势，不要求编程背景，可作为前置课程。<br><a href="https://xzy.mohrss.gov.cn/lesson/117" target="_blank">打开人工智能通识课程</a></div>
+<div class="official"><b>4. 上海市人社局：人工智能训练师评价与培训信息</b><br>上海已将人工智能训练师列入紧缺技能人才相关目录并持续开展三级培训、评价。<br><a href="https://rsj.sh.gov.cn/" target="_blank">打开上海人社官网</a></div>
+<div class="focus"><b>使用方法：</b>国家职业技能标准决定“考什么”；官方课程用于“学什么”；本站把两者整理成可执行的三级复习清单，并增加编码与实操练习。</div></section>
 
-<section id="practice-system" class="card" style="margin-top:16px"><div class="section-title"><h2>实操训练系统</h2><span class="pill green">6大任务</span></div><div class="tabbar" id="practiceTabs"></div><div id="practiceDetail"></div></section>
+<section id="theory" class="card" style="margin-top:15px"><h2>理论学习系统</h2><div id="theoryBox"></div></section>
 
-<section id="quiz" class="grid" style="margin-top:16px">
-<div class="card span8 quiz"><div class="section-title"><h2>理论专项刷题</h2><span class="pill" id="qcat"></span></div><div id="qtext"></div><div id="opts"></div><div id="answer" class="answer"></div><div style="margin-top:12px"><button class="btn" onclick="nextQ()">下一题</button></div></div>
-<div class="card span4"><h2>错题记录</h2><p class="muted">答错题目会自动记录在本机浏览器。</p><div class="metric"><span id="wrongCount">0</span> 题</div><button class="btn secondary" onclick="clearWrong()">清空错题记录</button></div>
-</section>
+<section id="coding" class="card" style="margin-top:15px"><h2>编码专项：Python + Pandas + 模型评价</h2><p class="muted">三级考试核心仍是职业技能与业务应用。编码模块用于强化数据处理、统计分析、指标计算与简单模型训练能力。</p>
+<div class="module"><h3>编码 1｜Python 基础</h3><ul><li>变量、字符串、数值、布尔值</li><li>list / dict / set / tuple</li><li>if / for / while</li><li>函数 def、参数、返回值</li><li>文件读写、异常处理</li></ul><div class="code">scores = [82, 91, 67, 88]
+qualified = [x for x in scores if x >= 60]
+print(len(qualified))
 
-<section id="plan" class="card" style="margin-top:16px"><div class="section-title"><h2>30天学习计划</h2><span class="muted">每天约90分钟</span></div><div id="days"></div></section>
-</main>
-<footer>人工智能训练师三级备考学习系统 · 学习记录保存在当前浏览器</footer>
+def pass_rate(scores):
+    return sum(x >= 60 for x in scores) / len(scores)</div></div>
+<div class="module"><h3>编码 2｜Pandas 数据读取与检查</h3><div class="code">import pandas as pd
+
+df = pd.read_csv("train_data.csv")
+print(df.head())
+print(df.info())
+print(df.isna().sum())
+print(df.duplicated().sum())</div><p>必须会解释：head() 看样例、info() 看字段和缺失、isna() 查缺失、duplicated() 查重复。</p></div>
+<div class="module"><h3>编码 3｜数据清洗</h3><div class="code"># 去重
+df = df.drop_duplicates()
+
+# 缺失值填补
+df["age"] = df["age"].fillna(df["age"].median())
+
+# 类别缺失
+nd = df["city"].mode()[0]
+df["city"] = df["city"].fillna(nd)
+
+# 日期标准化
+df["apply_date"] = pd.to_datetime(df["apply_date"], errors="coerce")
+
+# 过滤明显异常值
+df = df[(df["age"] >= 18) & (df["age"] <= 80)]</div></div>
+<div class="module"><h3>编码 4｜分类统计与分组分析</h3><div class="code">print(df["label"].value_counts())
+print(df["label"].value_counts(normalize=True))
+
+summary = df.groupby("label")["score"].agg(["count","mean","median"])
+print(summary)</div><p>重点：发现类别不平衡、异常分布和样本结构问题。</p></div>
+<div class="module"><h3>编码 5｜混淆矩阵与评价指标</h3><div class="code">from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import precision_score, recall_score, f1_score
+
+y_true = [1,1,1,0,0,1,0,1]
+y_pred = [1,0,1,0,0,0,1,1]
+
+print(confusion_matrix(y_true, y_pred))
+print("Accuracy", accuracy_score(y_true, y_pred))
+print("Precision", precision_score(y_true, y_pred))
+print("Recall", recall_score(y_true, y_pred))
+print("F1", f1_score(y_true, y_pred))</div></div>
+<div class="module"><h3>编码 6｜手工计算指标</h3><div class="code">TP, FP, TN, FN = 70, 10, 110, 30
+precision = TP / (TP + FP)
+recall = TP / (TP + FN)
+accuracy = (TP + TN) / (TP + FP + TN + FN)
+f1 = 2 * precision * recall / (precision + recall)
+print(precision, recall, accuracy, f1)</div></div>
+<div class="module"><h3>编码 7｜简单模型训练流程</h3><div class="code">from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
+X = df[["age","income","score"]]
+y = df["label"]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y)
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred))</div><p>要能说清：划分训练/测试集 → fit → predict → 指标评价。</p></div>
+<div class="module"><h3>编码 8｜阈值调整</h3><div class="code">proba = model.predict_proba(X_test)[:, 1]
+threshold = 0.35
+y_pred_low_threshold = (proba >= threshold).astype(int)
+
+print(recall_score(y_test, y_pred_low_threshold))
+print(precision_score(y_test, y_pred_low_threshold))</div><p class="warn">常见规律：降低正类阈值通常提升 Recall，但可能降低 Precision。考试答题要结合业务目标。</p></div>
+<div class="module"><h3>编码 9｜缺失与异常检测小任务</h3><div class="code">def quality_report(df):
+    return pd.DataFrame({
+        "dtype": df.dtypes.astype(str),
+        "missing": df.isna().sum(),
+        "missing_rate": df.isna().mean(),
+        "unique": df.nunique()
+    })
+print(quality_report(df))</div></div>
+<div class="module"><h3>编码 10｜编码必会解释题</h3><ul><li>为什么训练前要先清洗数据？</li><li>dropna 与 fillna 怎么选择？</li><li>为什么类别不平衡时 Accuracy 可能误导？</li><li>为什么不能用测试集反复调参？</li><li>降低阈值后 Precision/Recall 通常怎么变化？</li><li>random_state 的作用是什么？</li></ul></div></section>
+
+<section id="practice" class="card" style="margin-top:15px"><h2>实操训练系统</h2><div class="tabs" id="ptabs"></div><div id="pdetail"></div></section>
+
+<section id="quiz" class="grid" style="margin-top:15px"><div class="card c8"><h2>理论专项题库</h2><span class="pill" id="qcat"></span><div id="qtext" style="margin-top:10px;font-weight:700"></div><div id="qopts"></div><div class="ans" id="qans"></div><button class="btn" onclick="nextQ()">下一题</button></div><div class="card c4"><h2>题库统计</h2><div>当前题库：<b id="qtotal"></b> 题</div><div>错题记录：<b id="wcount"></b> 题</div><p class="muted">答错自动记录。</p><button class="btn ghost" onclick="localStorage.removeItem('wrongIds');refreshStats()">清空错题</button></div></section>
+
+<section id="mock" class="card" style="margin-top:15px"><h2>综合模拟训练</h2><div class="grid"><div class="c6"><div class="case"><b>理论模拟策略</b><ol><li>第一遍只做确定题。</li><li>公式题先写 TP/FP/TN/FN 定义。</li><li>数据质量题先判断问题类型，再选处理方式。</li><li>法规与职业道德作为稳定得分区。</li></ol></div></div><div class="c6"><div class="case"><b>实操模拟策略</b><ol><li>先复述任务目标。</li><li>写清检查步骤和判断规则。</li><li>给出结果与验证方法。</li><li>最后写风险、异常与优化建议。</li></ol></div></div></div>
+<div class="module"><h3>综合模拟案例</h3><p>某智能审核模型正样本占10%。测试结果：TP=720、FP=180、TN=8,820、FN=280。</p><ol><li>计算 Accuracy、Precision、Recall、F1。</li><li>评价模型是否适合“尽量减少漏识别”的业务目标。</li><li>提出3项优化方案。</li><li>写一段 Python 代码完成指标计算。</li></ol><div class="focus"><b>参考方向：</b>不要只看 Accuracy。FN=280 表明仍存在较多漏识别；如果业务更重视漏识别，应优先提升 Recall。可考虑阈值调整、补充难例与少数类样本、复核标签质量，同时观察 Precision 与误报成本。</div></div></section>
+
+<section id="plan" class="card" style="margin-top:15px"><h2>30天备考计划</h2><div id="planBox"></div></section>
+</main><footer>人工智能训练师三级完整备考学习系统 · 非官方考试题库；官方范围以人社部职业技能标准及评价机构通知为准</footer>
 <script>
-const theoryModules=[
-{title:'01 AI与机器学习基础',lessons:['人工智能、机器学习、深度学习的关系','监督学习、非监督学习、强化学习','分类、回归、聚类的典型应用','训练集、验证集、测试集作用'],focus:'高频：训练/验证/测试数据集区别、监督学习基本概念'},
-{title:'02 数据采集与数据清洗',lessons:['数据来源与采集规范','缺失值处理','异常值识别与处理','重复值去除、格式统一、编码处理','数据质量：完整性、准确性、一致性、及时性'],focus:'高频：缺失值、异常值、重复值及质量维度'},
-{title:'03 数据标注与质量控制',lessons:['文本分类、实体、情感标注','图像分类、目标框选、分割','语音转写与音频标注','视频片段标注','一致性检查、抽检、复核、返工'],focus:'高频：标签体系设计、交叉复核、一致性评价'},
-{title:'04 模型训练与评价指标',lessons:['模型训练基本流程','参数与超参数','混淆矩阵 TP/FP/TN/FN','Accuracy、Precision、Recall、F1','ROC/AUC基础理解'],focus:'必会公式：Precision、Recall、F1；能根据业务目标选指标'},
-{title:'05 模型问题诊断与优化',lessons:['过拟合与欠拟合','类别不平衡','训练数据覆盖不足','错误标签与噪声','阈值调整、补样、数据增强'],focus:'三级重点：看到指标异常，能定位数据、阈值、样本结构问题'},
-{title:'06 法规、安全与职业道德',lessons:['数据安全与访问控制','个人信息保护基本原则','知识产权与数据授权','网络安全基础','人工智能职业道德与合规'],focus:'记忆型得分模块，考前需集中复盘'}
+const theory=[
+['01 职业认知与AI基础',['人工智能训练师职业定义与工作流程','AI、机器学习、深度学习关系','监督/非监督/强化学习','分类、回归、聚类及典型应用','智能系统基本组成'],'重点：职业活动导向，不只背算法名词。'],
+['02 数据采集与数据预处理',['业务数据采集方式与规范','字段类型与数据字典','去重、缺失、异常、格式标准化','文本、图像、语音、视频预处理','数据脱敏和数据安全'],'重点：完整性、准确性、一致性、有效性。'],
+['03 数据标注',['文本分类、实体、情感、关系标注','图像分类、检测框、分割','语音转写、说话人和时间片标注','视频帧与事件标注','标签体系与边界规则'],'重点：标签定义要互斥、清晰、可复现。'],
+['04 标注质量与数据质量',['抽检、全检、复核、返工','一致性与争议样本处理','漏标、错标、多标、框偏移','标注规范版本管理','数据集质量报告'],'重点：先定义错误类型，再统计，再整改。'],
+['05 智能训练基础',['训练集/验证集/测试集','特征与标签','参数与超参数','训练、验证、调参、测试流程','过拟合与欠拟合'],'高频：测试集用于最终评价，不能反复参与调参。'],
+['06 模型评价',['TP/FP/TN/FN','Accuracy','Precision','Recall','F1','ROC/AUC基础','分类阈值与业务成本'],'必会：Precision=TP/(TP+FP)，Recall=TP/(TP+FN)。'],
+['07 模型诊断与优化',['类别不平衡','样本覆盖不足','脏数据与错标','数据漂移','阈值调整','补样、难例挖掘、数据增强'],'三级重点：能从指标和错误样本反推训练数据问题。'],
+['08 安全、法规与职业道德',['网络与数据安全基础','个人信息保护原则','知识产权与授权','数据最小必要原则','访问控制与日志','职业道德、保密、合规'],'记忆型得分区，但要会结合业务案例判断。']
 ];
-const practiceModules=[
-{title:'数据清洗任务',intro:'给定一份存在缺失、重复、异常和格式不一致的数据表，完成清洗方案。',steps:['识别字段类型与业务含义','统计缺失率、重复率与异常分布','确定删除、填补、修正策略','统一日期、类别、编码格式','输出清洗前后质量对比'],score:['问题识别完整 20分','清洗策略合理 30分','操作步骤规范 25分','质量验证与说明 25分'],answer:'参考答题结构：先描述数据问题，再给每类问题的处理规则，最后说明清洗结果如何验证。不要只写“删除异常数据”，需说明判断标准。'},
-{title:'文本标注规则设计',intro:'为“用户投诉意图识别”任务设计标签体系与标注规范。',steps:['明确任务目标与输入输出','定义互斥且可解释的标签','给出每个标签正反例','规定多意图、歧义、无效文本处理','设计抽检与争议复核机制'],score:['标签体系 30分','边界规则 25分','示例质量 20分','质检流程 25分'],answer:'示例标签：还款问题、额度问题、账户问题、欺诈风险、其他。每类必须定义纳入条件、排除条件和边界案例。'},
-{title:'图像标注质量检查',intro:'检查一批目标检测框选结果，识别漏标、错标、框偏移等问题。',steps:['核对类别标签','检查目标是否漏标/多标','检查框是否紧贴目标边界','检查遮挡、模糊、小目标规则','记录错误类型并计算抽检合格率'],score:['错误识别 35分','规则应用 25分','统计分析 20分','改进建议 20分'],answer:'重点区分漏标、错标、框偏大/偏小、类别错误；最后提出规则澄清、示例补充和重点返工范围。'},
-{title:'模型指标计算',intro:'根据混淆矩阵计算 Accuracy、Precision、Recall、F1 并解释。',steps:['识别 TP/FP/TN/FN','逐项代入公式','保留合理小数位','解释指标业务意义','根据业务目标提出优化方向'],score:['计算正确 40分','公式正确 20分','解释合理 25分','优化方向 15分'],answer:'Precision=TP/(TP+FP)，Recall=TP/(TP+FN)，F1=2PR/(P+R)。三级不只考计算，更看你能否解释业务影响。'},
-{title:'模型问题诊断',intro:'模型 Accuracy 92%、Precision 80%、Recall 62%，分析问题并提出改进。',steps:['不要只看Accuracy','判断Recall偏低意味着漏识别较多','检查样本不平衡与标签质量','检查阈值是否过高','补充难例/正样本并重新验证'],score:['指标理解 30分','问题定位 30分','优化方案 30分','验证思路 10分'],answer:'如果业务更怕漏掉正样本，应优先提高 Recall，同时观察 Precision/F1，避免仅以 Accuracy 判断模型好坏。'},
-{title:'综合实操模拟',intro:'从数据质量、标注规范、模型评价到优化建议完成一份综合分析。',steps:['审题并划分任务模块','检查数据问题','检查标注规则与质量','计算或解释模型指标','提出按优先级排序的改进方案','说明验证方法'],score:['数据 20分','标注 20分','模型评价 25分','问题诊断 20分','方案与表达 15分'],answer:'综合题建议按“现象→原因→处理→验证”四段式作答，评分点最清晰。'}
+const practices=[
+{t:'1 数据质量检查',intro:'给定CSV，识别缺失、重复、异常、格式问题并输出质量报告。',steps:['读取数据并理解字段','统计缺失率和重复率','检查数值分布与异常范围','检查类别值、日期格式','制定清洗规则','清洗后再次验证'],score:'问题识别25分；处理策略30分；操作规范25分；验证20分',ans:'答题必须体现“发现→规则→处理→验证→记录”。'},
+{t:'2 文本标注规范设计',intro:'设计“用户咨询意图识别”标签体系。',steps:['明确业务目标','设计标签名称与定义','给正例、反例','处理多意图、歧义、无效文本','设计抽检复核'],score:'标签30分；边界25分；例子20分；质检25分',ans:'标签要尽量互斥；无法判断的样本必须有升级/复核规则。'},
+{t:'3 图像标注质检',intro:'检查目标检测数据中的漏标、错标、框偏移。',steps:['核对类别','检查漏标多标','检查框边界','处理遮挡模糊小目标','统计错误率','提出返工范围'],score:'识别35分；规则25分；统计20分；建议20分',ans:'结果不仅写“有错误”，还要分错误类型与严重度。'},
+{t:'4 指标计算与解释',intro:'根据混淆矩阵计算 Accuracy/Precision/Recall/F1。',steps:['确认正负类定义','识别TP/FP/TN/FN','代入公式','解释业务意义','根据目标提出优化'],score:'计算40分；公式20分；解释25分；优化15分',ans:'如果业务怕漏掉正样本，优先关注 Recall 和 FN。'},
+{t:'5 类别不平衡诊断',intro:'正类仅占5%，模型Accuracy=96%，判断是否足够好。',steps:['先看基准比例','查看混淆矩阵','检查Recall/Precision/F1','检查少数类样本数量与覆盖','给出重采样/补样/阈值建议'],score:'诊断35分；指标25分；方案30分；风险10分',ans:'高Accuracy可能来自多数类，必须看少数类识别能力。'},
+{t:'6 模型阈值优化',intro:'业务要求降低漏识别，将阈值0.5调整至0.3。',steps:['比较前后混淆矩阵','观察Recall变化','观察Precision和FP成本','选候选阈值','在独立数据上验证'],score:'比较30分；业务解释30分；验证25分；风险15分',ans:'阈值不是越低越好，要做 Precision/Recall 与业务成本权衡。'},
+{t:'7 标注一致性问题',intro:'两名标注员对同一批样本大量冲突。',steps:['统计冲突率','按标签定位冲突集中区','抽查规则边界','组织争议样本复核','更新规范与示例','重新评估一致性'],score:'定位25分；规则分析25分；整改30分；复验20分',ans:'不要直接多数投票，要先判断是否是规则定义不清。'},
+{t:'8 综合训练项目',intro:'完成数据清洗→标注质检→训练集划分→指标评价→优化建议。',steps:['明确目标和正负类','检查数据质量','核对标签质量','划分训练/验证/测试','训练基础模型','计算指标','错误样本分析','提出下一轮训练计划'],score:'流程20分；数据25分；指标25分；诊断20分；表达10分',ans:'综合实操的关键是完整闭环，而非单一算法复杂度。'}
 ];
-function renderTheory(){const box=document.getElementById('theoryModules');box.innerHTML='';theoryModules.forEach((m,i)=>{let done=localStorage.getItem('tmod'+i)==='1';let el=document.createElement('div');el.className='module';el.innerHTML=`<div class="module-head"><div><h3>${m.title}</h3><span class="muted">${m.focus}</span></div><input type="checkbox" ${done?'checked':''} onchange="setTheory(${i},this.checked)" style="width:20px;height:20px"></div><ul class="lesson-list">${m.lessons.map(x=>`<li>${x}</li>`).join('')}</ul>`;box.appendChild(el)});updateDash()}
-function setTheory(i,v){localStorage.setItem('tmod'+i,v?'1':'0');updateDash()}
-function renderPractice(){const tabs=document.getElementById('practiceTabs');tabs.innerHTML='';practiceModules.forEach((m,i)=>{let b=document.createElement('button');b.textContent=(i+1)+'. '+m.title;b.onclick=()=>showPractice(i);tabs.appendChild(b)});showPractice(0)}
-function showPractice(i){document.querySelectorAll('#practiceTabs button').forEach((b,j)=>b.classList.toggle('active',i===j));let m=practiceModules[i],done=localStorage.getItem('pmod'+i)==='1';document.getElementById('practiceDetail').innerHTML=`<div class="case"><b>任务场景：</b>${m.intro}</div><h3>标准操作步骤</h3><ol class="steps">${m.steps.map(x=>`<li>${x}</li>`).join('')}</ol><div class="score"><b>评分点</b><ul>${m.score.map(x=>`<li>${x}</li>`).join('')}</ul></div><details style="margin-top:12px"><summary><b>查看参考答案 / 答题框架</b></summary><p>${m.answer}</p></details><div class="check-row"><input type="checkbox" ${done?'checked':''} onchange="setPractice(${i},this.checked)"><div><b>我已完成本实操任务</b><div class="muted">建议真正独立写一次，再勾选完成。</div></div></div>`}
-function setPractice(i,v){localStorage.setItem('pmod'+i,v?'1':'0');updateDash()}
-function updateDash(){let t=theoryModules.filter((_,i)=>localStorage.getItem('tmod'+i)==='1').length;let p=practiceModules.filter((_,i)=>localStorage.getItem('pmod'+i)==='1').length;document.getElementById('theoryDone').textContent=t;document.getElementById('practiceDone').textContent=p;let plan=themes.filter((_,i)=>localStorage.getItem('ai3d'+i)==='1').length;let pct=Math.round((t+p+plan)/(12+30)*100);document.getElementById('pct').textContent=pct+'%';document.getElementById('bar').style.width=pct+'%'}
 const qs=[
-{c:'模型评价',q:'真实正样本中，被模型正确识别出来的比例是？',o:['Accuracy','Precision','Recall','Specificity'],a:2,e:'Recall=TP/(TP+FN)，反映真实正样本的找回能力。'},
-{c:'数据集',q:'验证集最主要的用途是？',o:['直接训练模型参数','调参与模型选择','替代测试集','生成标签'],a:1,e:'验证集用于调参和模型选择，测试集用于最终独立评价。'},
-{c:'模型问题',q:'训练集表现很好、测试集明显变差，最典型的问题是？',o:['欠拟合','过拟合','标签太少','Precision过高'],a:1,e:'这是典型过拟合：训练数据拟合过度、泛化不足。'},
-{c:'数据清洗',q:'以下哪项最不适合作为异常值处理的第一步？',o:['确认业务规则','观察分布','直接全部删除','核查数据来源'],a:2,e:'异常值不应一律删除，应先判断业务合理性和来源。'},
-{c:'标注质检',q:'发现不同标注员对同类样本频繁给出不同标签，优先应做什么？',o:['增加模型层数','澄清标注规则和边界案例','删掉全部样本','提高学习率'],a:1,e:'一致性低首先说明标注规范或理解可能存在问题。'},
-{c:'指标应用',q:'如果业务最怕漏掉风险用户，应优先关注哪个指标？',o:['Recall','Precision','训练速度','参数量'],a:0,e:'漏掉正样本对应 FN，优先关注 Recall。'},
-{c:'数据质量',q:'同一客户在不同表中性别字段编码不一致，主要属于哪类质量问题？',o:['完整性','一致性','及时性','可解释性'],a:1,e:'跨表或跨系统取值不统一属于一致性问题。'},
-{c:'法规',q:'处理个人信息时，较合理的原则是？',o:['能收多少收多少','与业务无关也长期保留','最小必要并明确用途','无需授权即可共享'],a:2,e:'应遵循目的明确、最小必要、安全保护等原则。'}
+['AI基础','监督学习最典型的特征是？',['训练数据带标签','没有任何数据','只适合聚类','不需要评价'],0,'监督学习使用带标签样本学习输入到目标的映射。'],
+['数据','以下哪项最直接用于检查缺失数据？',['duplicated()','isna()','sort_values()','rename()'],1,'Pandas中 isna() / isnull() 常用于检查缺失。'],
+['数据','同一客户记录重复出现，首先应归类为什么问题？',['重复数据','异常值','类别不平衡','过拟合'],0,'重复记录属于数据质量问题。'],
+['标注','标注规范最重要的目标之一是？',['让规则越复杂越好','提高可复现性和一致性','尽量不用示例','减少标签定义'],1,'清晰规则和例子能减少标注者理解差异。'],
+['标注','目标检测框明显没有覆盖完整目标，属于？',['漏标','框偏移/框不准','类别不平衡','数据泄漏'],1,'属于框边界质量问题。'],
+['训练','测试集的主要用途是？',['训练参数','最终评价泛化能力','反复调参','补齐缺失值'],1,'测试集应尽量保持独立。'],
+['训练','训练集表现很好、测试集明显差，最可能是？',['过拟合','欠拟合','Recall太高','没有标签'],0,'典型过拟合现象。'],
+['指标','真实正样本中被识别出的比例是？',['Precision','Recall','Accuracy','Specificity'],1,'Recall=TP/(TP+FN)。'],
+['指标','预测为正的样本中真正为正的比例是？',['Precision','Recall','Accuracy','AUC'],0,'Precision=TP/(TP+FP)。'],
+['指标','F1 的作用是？',['只衡量TN','综合Precision和Recall','只衡量FP','替代所有业务指标'],1,'F1是Precision和Recall的调和平均。'],
+['指标','类别极度不平衡时，仅看Accuracy的主要风险是？',['计算太慢','可能掩盖少数类识别很差','一定低估模型','无法得到TN'],1,'多数类占比高时Accuracy可能虚高。'],
+['优化','为了减少漏掉正样本，通常优先关注？',['Recall','TN数量','字段名','文件大小'],0,'漏识别对应FN，Recall直接受FN影响。'],
+['优化','降低分类阈值通常可能导致？',['Recall升高、Precision可能下降','Recall一定下降','Precision一定升高','所有指标不变'],0,'更多样本被判为正类，常见结果是Recall上升、FP增加。'],
+['优化','标注错误会产生什么影响？',['增加训练噪声','一定提高Accuracy','无影响','只影响文件大小'],0,'错误标签会污染监督信号。'],
+['编码','drop_duplicates() 的作用是？',['填补缺失','去除重复记录','训练模型','计算Recall'],1,'用于删除重复行。'],
+['编码','fillna() 常用于？',['处理缺失值','画图','训练深度学习','重命名模型'],0,'fillna用于填补缺失。'],
+['编码','train_test_split 中 stratify=y 常用于？',['让类别比例更稳定','删除标签','强制100%准确','去掉测试集'],0,'分类任务中可保持训练/测试的类别比例近似一致。'],
+['编码','model.fit(X_train,y_train) 表示？',['训练模型','删除数据','打印混淆矩阵','读取CSV'],0,'fit用于根据训练数据学习模型参数。'],
+['编码','predict_proba 输出的主要是？',['预测概率','字段类型','重复值','模型源码'],0,'通常返回各类别预测概率。'],
+['安全','处理个人信息时更合理的原则是？',['越多越好','最小必要并有合法依据','全部公开','永久保存'],1,'数据处理应遵循必要、授权和安全原则。'],
+['质量','标注冲突集中在某一标签，优先应做什么？',['直接删除所有样本','检查该标签定义与边界规则','提高学习率','修改文件名'],1,'标签边界不清是常见根因。'],
+['质量','抽检发现错误后更完整的动作是？',['只改当前一条','统计错误类型并确定返工范围','忽略','直接上线'],1,'质量控制需要闭环整改。'],
+['训练','验证集主要用于？',['模型选择和调参','最终唯一评价','替代训练集','存日志'],0,'验证集用于模型选择和超参数调整。'],
+['模型','欠拟合的典型表现是？',['训练和测试都较差','训练好测试差','测试100%','只有FP'],0,'模型能力不足时训练数据也难拟合好。'],
+['数据','异常值处理的正确原则是？',['一律删除','结合业务规则与统计证据判断','全部填0','全部复制'],1,'异常不等于错误，需结合业务含义。'],
+['编码','value_counts(normalize=True) 可以得到？',['类别占比','模型参数','测试集','文件路径'],0,'normalize=True返回相对频率。'],
+['模型','数据漂移表示？',['线上数据分布与训练时期发生变化','代码文件变大','测试集被删除','标签名变短'],0,'分布变化可能导致模型性能下降。'],
+['职业','三级训练师更需要具备什么能力？',['只会机械标注','能完成较复杂数据处理、质量分析与训练评价','只会安装软件','只记术语'],1,'高级工更强调独立处理较复杂任务和分析能力。'],
+['综合','模型Precision高、Recall低，最准确的解释是？',['误报相对少但漏报较多','误报多漏报少','完全不可用','没有正样本'],0,'高Precision表示正类预测更可信，低Recall表示漏掉的真实正类较多。'],
+['综合','完整的数据质量闭环更合理的是？',['发现→处理→结束','发现→定义规则→处理→验证→记录','只抽检','只删除异常'],1,'质量管理需要规则、执行、验证与记录闭环。']
 ];
-let qi=0;function renderQ(){let q=qs[qi];document.getElementById('qcat').textContent=q.c;document.getElementById('qtext').innerHTML='<b>'+q.q+'</b>';document.getElementById('opts').innerHTML=q.o.map((x,i)=>`<button class="option" onclick="pick(${i})">${String.fromCharCode(65+i)}. ${x}</button>`).join('');document.getElementById('answer').style.display='none'}
-function pick(i){let q=qs[qi],a=document.getElementById('answer');a.style.display='block';a.className='answer '+(i===q.a?'':'wrong');a.textContent=(i===q.a?'✓ 正确。':'✗ 不正确。')+q.e;if(i!==q.a){let wrong=JSON.parse(localStorage.getItem('wrongQ')||'[]');if(!wrong.includes(q.q))wrong.push(q.q);localStorage.setItem('wrongQ',JSON.stringify(wrong));updateWrong()}}
-function nextQ(){qi=(qi+1)%qs.length;renderQ()}function updateWrong(){document.getElementById('wrongCount').textContent=JSON.parse(localStorage.getItem('wrongQ')||'[]').length}function clearWrong(){localStorage.removeItem('wrongQ');updateWrong()}
-const themes=[['AI基础','AI、机器学习、深度学习'],['AI基础','监督/非监督学习'],['数据集','训练/验证/测试集'],['数据清洗','缺失、异常、重复'],['数据质量','完整性、准确性、一致性'],['数据标注','文本标注'],['数据标注','图像/语音标注'],['质检','抽检与一致性'],['复习','数据专题题库'],['阶段测验','理论测验一'],['模型训练','训练流程'],['模型训练','参数与超参数'],['模型问题','过拟合/欠拟合'],['指标','混淆矩阵'],['指标','Accuracy/Precision'],['指标','Recall/F1'],['指标应用','业务指标取舍'],['优化','样本不平衡'],['优化','阈值与补样'],['阶段测验','模型专题测验'],['实操','数据清洗'],['实操','标注规则设计'],['实操','标注质检'],['实操','指标计算'],['实操','模型诊断'],['法规','安全与个人信息'],['模拟','理论模拟'],['模拟','实操模拟'],['冲刺','错题与评分点'],['考前','轻复习与策略']];
-function renderPlan(){let box=document.getElementById('days');box.innerHTML='';themes.forEach((x,i)=>{let row=document.createElement('div');row.className='check-row';row.innerHTML=`<input type="checkbox" ${localStorage.getItem('ai3d'+i)==='1'?'checked':''} onchange="localStorage.setItem('ai3d${i}',this.checked?'1':'0');updateDash()"><div><b>Day ${i+1} · ${x[0]}</b><div class="muted">${x[1]}</div></div>`;box.appendChild(row)})}
-renderTheory();renderPractice();renderPlan();renderQ();updateWrong();updateDash();
-</script>
-</body></html>
+const plan=[['官方标准','浏览国家职业技能标准，建立考试范围'],['官方课程','完成AI基础课程'],['AI基础','监督/非监督/分类/回归/聚类'],['数据基础','字段、数据字典、数据集划分'],['Pandas','读取、info、缺失、重复'],['数据清洗','fillna/drop_duplicates/异常值'],['文本标注','标签体系与边界'],['图像标注','分类/检测/分割'],['语音视频','转写、时间片、事件'],['质量控制','抽检、一致性、返工'],['阶段测验','理论题30题'],['训练流程','训练/验证/测试'],['参数概念','参数、超参数、fit/predict'],['混淆矩阵','TP/FP/TN/FN'],['指标','Accuracy/Precision'],['指标','Recall/F1'],['Python','手工计算指标'],['sklearn','metrics常用函数'],['模型问题','过拟合/欠拟合'],['类别不平衡','Accuracy陷阱'],['模型优化','阈值调整'],['实操1','数据质量检查'],['实操2','标注规范设计'],['实操3','指标计算'],['实操4','模型诊断'],['安全法规','数据安全、个人信息、知识产权'],['综合编码','数据清洗+模型评价'],['理论模拟','完整模拟一次'],['实操模拟','完整案例一次'],['考前冲刺','错题+公式+官方标准重点']];
+let pidx=0,qidx=0;
+function renderTheory(){let b=document.getElementById('theoryBox');b.innerHTML='';theory.forEach((x,i)=>{let done=localStorage.getItem('th'+i)==='1';b.innerHTML+=`<div class="module"><div style="display:flex;justify-content:space-between;gap:10px"><div><h3>${x[0]}</h3><ul>${x[1].map(v=>'<li>'+v+'</li>').join('')}</ul><div class="focus">${x[2]}</div></div><label><input type="checkbox" ${done?'checked':''} onchange="localStorage.setItem('th${i}',this.checked?'1':'0');dash()"> 已掌握</label></div></div>`})}
+function renderPractice(){let tabs=document.getElementById('ptabs');tabs.innerHTML='';practices.forEach((x,i)=>tabs.innerHTML+=`<button class="${i===pidx?'active':''}" onclick="pidx=${i};renderPractice()">${x.t}</button>`);let x=practices[pidx];let done=localStorage.getItem('pr'+pidx)==='1';document.getElementById('pdetail').innerHTML=`<div class="case"><b>任务：</b>${x.intro}</div><h3>标准操作步骤</h3><ol>${x.steps.map(v=>'<li>'+v+'</li>').join('')}</ol><div class="score"><b>评分建议：</b>${x.score}</div><div class="module"><b>参考答题框架：</b>${x.ans}</div><label><input type="checkbox" ${done?'checked':''} onchange="localStorage.setItem('pr${pidx}',this.checked?'1':'0');dash()"> 已完成此实操</label>`}
+function renderQ(){let q=qs[qidx];document.getElementById('qcat').textContent=q[0];document.getElementById('qtext').textContent=(qidx+1)+'. '+q[1];document.getElementById('qopts').innerHTML=q[2].map((v,i)=>`<button class="qopt" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${v}</button>`).join('');document.getElementById('qans').style.display='none';refreshStats()}
+function answer(i){let q=qs[qidx],a=document.getElementById('qans');a.style.display='block';a.textContent=(i===q[3]?'✓ 正确：':'✗ 错误：')+q[4];if(i!==q[3]){let w=JSON.parse(localStorage.getItem('wrongIds')||'[]');if(!w.includes(qidx))w.push(qidx);localStorage.setItem('wrongIds',JSON.stringify(w));refreshStats()}}
+function nextQ(){qidx=(qidx+1)%qs.length;renderQ()}
+function refreshStats(){document.getElementById('qtotal').textContent=qs.length;let n=JSON.parse(localStorage.getItem('wrongIds')||'[]').length;document.getElementById('wcount').textContent=n;document.getElementById('wrong').textContent=n}
+function renderPlan(){let b=document.getElementById('planBox');b.innerHTML='';plan.forEach((x,i)=>{let d=localStorage.getItem('day'+i)==='1';b.innerHTML+=`<div class="check"><input type="checkbox" ${d?'checked':''} onchange="localStorage.setItem('day${i}',this.checked?'1':'0');dash()"><div><b>Day ${i+1} · ${x[0]}</b><div class="muted">${x[1]}</div></div></div>`})}
+function dash(){let t=theory.filter((_,i)=>localStorage.getItem('th'+i)==='1').length;let p=practices.filter((_,i)=>localStorage.getItem('pr'+i)==='1').length;let d=plan.filter((_,i)=>localStorage.getItem('day'+i)==='1').length;let pct=Math.round((t+p+d)/(theory.length+practices.length+plan.length)*100);document.getElementById('tdone').textContent=t;document.getElementById('pdone').textContent=p;document.getElementById('pct').textContent=pct+'%';document.getElementById('bar').style.width=pct+'%';refreshStats()}
+renderTheory();renderPractice();renderQ();renderPlan();dash();
+</script></body></html>
