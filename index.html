@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>上海人工智能训练师三级｜30天备考学习站</title>
+<style>
+:root{
+  --bg:#f6f7fb; --card:#fff; --text:#182230; --muted:#667085; --line:#e6e8ec;
+  --accent:#315efb; --accent2:#6c7cff; --ok:#129a74; --warn:#d97706;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,#1d2b64,#315efb);color:#fff;padding:52px 20px 36px}
+.wrap{max-width:1100px;margin:auto}
+h1{margin:0 0 10px;font-size:34px}
+.subtitle{opacity:.9;line-height:1.7}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;overflow:auto;padding:10px 14px}
+nav a{white-space:nowrap;text-decoration:none;color:#344054;padding:8px 12px;border-radius:9px}
+nav a:hover{background:#eef2ff;color:var(--accent)}
+main{padding:26px 16px 70px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 18px rgba(16,24,40,.04)}
+.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}
+.metric{font-size:32px;font-weight:750;margin-top:8px}
+small,.muted{color:var(--muted)}
+.progress{height:12px;background:#eef1f6;border-radius:999px;overflow:hidden;margin-top:12px}
+.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%}
+h2{margin:8px 0 16px;font-size:25px} h3{margin:0 0 8px}
+.day{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid #f0f1f3}
+.day:last-child{border-bottom:0}.day input{margin-top:4px;width:19px;height:19px}
+.badge{display:inline-block;padding:4px 9px;border-radius:999px;background:#eef2ff;color:#3149c6;font-size:12px}
+.kp{padding:13px;border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fcfcfd}
+.quiz button,.btn{border:0;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:650;cursor:pointer}
+.quiz .option{display:block;width:100%;text-align:left;background:#fff;color:#344054;border:1px solid var(--line);margin:8px 0}
+.quiz .option:hover{border-color:var(--accent);background:#f8f9ff}
+.answer{display:none;margin-top:10px;padding:12px;background:#ecfdf3;border-radius:10px;color:#067647}
+.flash{min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed #b9c1d0;border-radius:14px;padding:22px;font-size:20px;cursor:pointer;background:#fafbff}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:11px;border-bottom:1px solid var(--line);text-align:left}
+footer{text-align:center;color:var(--muted);padding:28px}
+@media(max-width:760px){.span4,.span6,.span8,.span12{grid-column:span 12}h1{font-size:28px}header{padding-top:38px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+  <div class="badge" style="background:rgba(255,255,255,.16);color:#fff">上海 · 人工智能训练师三级（高级工）</div>
+  <h1>30天备考学习站</h1>
+  <div class="subtitle">理论 + 实操双线学习｜每天约 90 分钟｜进度自动保存在你的浏览器</div>
+</div>
+</header>
+
+<nav><div class="wrap">
+<a href="#dashboard">学习看板</a><a href="#plan">30天计划</a><a href="#knowledge">高频考点</a>
+<a href="#quiz">每日练习</a><a href="#practice">实操训练</a><a href="#flash">闪卡</a><a href="#exam">考前冲刺</a>
+</div></nav>
+
+<main class="wrap">
+<section id="dashboard" class="grid">
+<div class="card span4"><small>30天计划完成度</small><div class="metric" id="pct">0%</div><div class="progress"><div class="bar" id="bar"></div></div></div>
+<div class="card span4"><small>已完成学习天数</small><div class="metric"><span id="done">0</span> / 30</div></div>
+<div class="card span4"><small>考试目标</small><div class="metric">≥ 60分</div><small>理论、实操分别达到合格线</small></div>
+
+<section id="plan" class="card span12">
+<h2>30天学习计划</h2>
+<div id="days"></div>
+</section>
+
+<section id="knowledge" class="card span8">
+<h2>三级高频考点</h2>
+<div class="kp"><h3>01 数据采集与数据清洗</h3><div class="muted">数据完整性、一致性、准确性；缺失值、异常值、重复数据；格式统一与质量检查。</div></div>
+<div class="kp"><h3>02 数据标注与质量控制</h3><div class="muted">文本、图像、语音、视频标注；标签体系；一致性；抽检；交叉复核；标注质量评价。</div></div>
+<div class="kp"><h3>03 模型训练基础</h3><div class="muted">训练集 / 验证集 / 测试集；监督学习与非监督学习；过拟合、欠拟合；参数与超参数。</div></div>
+<div class="kp"><h3>04 模型效果评价</h3><div class="muted">Accuracy、Precision、Recall、F1、混淆矩阵。理解不同业务目标下指标权衡。</div></div>
+<div class="kp"><h3>05 模型优化与问题分析</h3><div class="muted">样本不平衡、错误标签、数据漂移、阈值调整、特征质量、训练数据补充。</div></div>
+<div class="kp"><h3>06 安全、伦理与法规</h3><div class="muted">数据安全、个人信息保护、知识产权、职业道德、网络安全与合规使用。</div></div>
+</section>
+
+<aside class="card span4">
+<h2>重点公式</h2>
+<table>
+<tr><th>指标</th><th>公式</th></tr>
+<tr><td>Precision</td><td>TP / (TP+FP)</td></tr>
+<tr><td>Recall</td><td>TP / (TP+FN)</td></tr>
+<tr><td>F1</td><td>2PR / (P+R)</td></tr>
+<tr><td>Accuracy</td><td>(TP+TN) / 全部</td></tr>
+</table>
+<p class="muted">记忆：Precision 看“预测为正的有多少是真的”；Recall 看“真实为正的有多少被找出来”。</p>
+</aside>
+
+<section id="quiz" class="card span6 quiz">
+<h2>每日练习题</h2>
+<div id="qtext"></div>
+<div id="opts"></div>
+<div id="answer" class="answer"></div>
+<button onclick="nextQ()">下一题</button>
+</section>
+
+<section id="practice" class="card span6">
+<h2>实操模拟</h2>
+<div class="kp"><b>案例：</b>某二分类模型 Accuracy=92%，Precision=80%，Recall=62%。</div>
+<p><b>答题思路：</b></p>
+<ol>
+<li>Accuracy 较高，但不能单独说明模型表现优秀。</li>
+<li>Recall 仅 62%，说明正样本漏识别较明显。</li>
+<li>优先检查类别不平衡、阈值设置、训练样本覆盖和标注质量。</li>
+<li>如果业务更关注“不要漏掉正样本”，应优先提升 Recall，同时观察 Precision 与 F1 的变化。</li>
+</ol>
+</section>
+
+<section id="flash" class="card span6">
+<h2>考点闪卡</h2>
+<div class="flash" id="flashcard" onclick="flipCard()">点击显示答案</div>
+<div style="margin-top:12px"><button class="btn" onclick="nextCard()">下一张</button></div>
+</section>
+
+<section id="exam" class="card span6">
+<h2>考前7天冲刺</h2>
+<ul>
+<li>D-7：完整过一遍高频考点 + 法规</li>
+<li>D-6：数据清洗、标注专项题</li>
+<li>D-5：模型评价指标专项题</li>
+<li>D-4：实操案例 3 套</li>
+<li>D-3：理论模拟卷 1 套 + 错题复盘</li>
+<li>D-2：实操模拟卷 1 套 + 薄弱点补漏</li>
+<li>D-1：只看错题、公式、流程，不再大规模刷题</li>
+</ul>
+</section>
+</section>
+</main>
+
+<footer>人工智能训练师三级备考学习站 · 学习进度仅保存在当前浏览器</footer>
+
+<script>
+const themes=[
+["AI基础","AI、机器学习、深度学习基本概念"],
+["AI基础","监督学习、非监督学习与常见应用"],
+["数据基础","训练集、验证集、测试集"],
+["数据清洗","缺失值、异常值、重复值"],
+["数据清洗","格式统一、编码与质量检查"],
+["数据标注","文本分类、实体标注、情感标注"],
+["数据标注","图像框选、分类与质量复核"],
+["数据标注","语音/视频标注基本流程"],
+["质量控制","一致性、抽检、交叉复核"],
+["阶段复习","前9天知识点复盘 + 50题"],
+["模型训练","模型训练完整流程"],
+["模型训练","参数、超参数与调参基础"],
+["模型问题","过拟合、欠拟合"],
+["指标","混淆矩阵 TP/FP/TN/FN"],
+["指标","Accuracy / Precision"],
+["指标","Recall / F1"],
+["指标应用","不同业务场景下指标取舍"],
+["优化","样本不平衡与数据补充"],
+["优化","阈值调整与错误分析"],
+["阶段复习","模型专题复盘 + 50题"],
+["实操","数据清洗实操案例"],
+["实操","标注规则设计案例"],
+["实操","模型指标计算案例"],
+["实操","模型问题诊断案例"],
+["法规","数据安全、个人信息与知识产权"],
+["法规","职业道德、网络安全"],
+["模拟","理论模拟卷（一）"],
+["模拟","实操模拟卷（一）"],
+["冲刺","错题本 + 高频公式 + 流程"],
+["考前","轻复习 + 考试策略"]
+];
+const days=document.getElementById('days');
+themes.forEach((x,i)=>{
+  let d=document.createElement('div'); d.className='day';
+  d.innerHTML=`<input type="checkbox" id="d${i}" onchange="save()"><div><b>Day ${i+1} · ${x[0]}</b><div class="muted">${x[1]}</div></div>`;
+  days.appendChild(d);
+});
+function save(){
+ let n=0; themes.forEach((_,i)=>{let c=document.getElementById('d'+i); localStorage.setItem('ai3d'+i,c.checked?'1':'0'); if(c.checked)n++;});
+ document.getElementById('done').textContent=n; let p=Math.round(n/30*100);document.getElementById('pct').textContent=p+'%';document.getElementById('bar').style.width=p+'%';
+}
+themes.forEach((_,i)=>document.getElementById('d'+i).checked=localStorage.getItem('ai3d'+i)==='1'); save();
+
+const qs=[
+{q:"以下哪个指标最直接反映“真实正样本中有多少被模型识别出来”？",o:["Accuracy","Precision","Recall","Specificity"],a:2,e:"Recall = TP/(TP+FN)，强调真实正样本的找回能力。"},
+{q:"训练集、验证集、测试集三者中，测试集主要用于什么？",o:["训练模型参数","最终评估泛化能力","生成标签","替代验证集调参"],a:1,e:"测试集应尽量保持独立，用于最终评估模型泛化表现。"},
+{q:"如果模型训练集表现很好，但测试集表现明显变差，最可能的问题是？",o:["欠拟合","过拟合","标签数量太多","Recall过高"],a:1,e:"训练好、测试差是典型过拟合信号。"},
+{q:"数据标注质量控制中，哪一种做法更有利于发现标注者之间的不一致？",o:["只让一个人标全部数据","交叉标注并计算一致性","减少抽检","随机删除标签"],a:1,e:"交叉标注与一致性评估能直接发现规则理解差异。"},
+{q:"某模型 Precision 高、Recall 低，通常意味着？",o:["误报少但漏报多","误报多且漏报少","所有样本都识别正确","模型一定不可用"],a:0,e:"Precision高说明预测为正的更可信；Recall低说明真实正样本漏掉较多。"}
+];
+let qi=0;
+function renderQ(){let q=qs[qi];document.getElementById('qtext').innerHTML='<b>'+q.q+'</b>';let s='';q.o.forEach((x,i)=>s+=`<button class="option" onclick="pick(${i})">${String.fromCharCode(65+i)}. ${x}</button>`);document.getElementById('opts').innerHTML=s;document.getElementById('answer').style.display='none';}
+function pick(i){let q=qs[qi],a=document.getElementById('answer');a.style.display='block';a.textContent=(i===q.a?'✓ 正确。':'✗ 不正确。')+q.e}
+function nextQ(){qi=(qi+1)%qs.length;renderQ()} renderQ();
+
+const cards=[
+["Recall 是什么？","真实正样本中，被正确识别出来的比例。公式：TP/(TP+FN)。"],
+["Precision 是什么？","所有被预测为正的样本中，真正为正的比例。公式：TP/(TP+FP)。"],
+["过拟合的典型表现？","训练集表现很好，但验证/测试集明显变差，泛化能力不足。"],
+["数据标注的一致性为什么重要？","相同规则应产生稳定标签；低一致性会增加训练噪声并降低模型效果。"],
+["训练集、验证集、测试集分别做什么？","训练集学参数；验证集调模型/超参数；测试集用于最终独立评估。"]
+];
+let ci=0,flipped=false;
+function flipCard(){flipped=!flipped;document.getElementById('flashcard').textContent=flipped?cards[ci][1]:cards[ci][0]}
+function nextCard(){ci=(ci+1)%cards.length;flipped=false;document.getElementById('flashcard').textContent=cards[ci][0]}
+nextCard(); ci=0; document.getElementById('flashcard').textContent=cards[0][0];
+</script>
+</body>
+</html>
