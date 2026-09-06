@@ -1,0 +1,65 @@
+name: Build SJTU Level3 Official HTML Summaries
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-official-html-summaries.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate HTML summary pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from html import escape
+
+          out=Path('official-html'); out.mkdir(exist_ok=True)
+          zip1='https://gjzs.sjtu.edu.cn/uploads/addons/skill/RG3_J1.1_20250916.zip'
+          zip2='https://gjzs.sjtu.edu.cn/uploads/addons/skill/4-04-05-05_3_20250701.zip'
+          docs=[
+          ('01-competition-plan.html','人工智能训练师_三级_竞赛方案_J1.1_20250916.doc','三级竞赛方案','说明竞赛评价方式、理论与实操占比、理论题型结构、操作技能总时长及场地设备要求。','理论90分钟；竞赛成绩按理论30%、实操70%计算；总成绩达到60分及以上合格；官方环境含Python。',['掌握竞赛评价规则','熟悉理论题型和题量','熟悉120分钟实操节奏','了解硬件与Python环境'],zip1),
+          ('02-competition-elements.html','人工智能训练师_三级_竞赛考核要素细目表_J1.1_20250916.docx','三级竞赛考核要素细目表','用于映射竞赛操作技能考核要素，帮助理解实操任务覆盖的工作单元。','重点围绕业务分析、智能训练、智能系统设计、培训与指导等三级工作内容。',['按单元理解实操评分','把任务拆成可评分步骤','训练结果输出与过程完整性'],zip1),
+          ('03-cover-preface.html','0封面封底名单前言.doc','指导手册封面与前言','确认资料身份：职业技能等级认定指导手册，人工智能训练师（三级），由上海市职业技能鉴定中心指导编写。','适合作为资料版本与权威来源确认页。',['确认资料名称与等级','确认指导编写单位'],zip2),
+          ('04-contents.html','1目录.doc','三级指导手册目录','展示指导手册的完整结构，包括职业简介、认定方案、认定要素细目表、理论复习题、操作技能复习题以及理论/实操模拟卷。','备考时建议按目录顺序学习：先方案和细目表，再做复习题与模拟卷。',['建立完整备考地图','明确六个核心部分'],zip2),
+          ('05-career-intro.html','第0部分_人工智能训练师_职业简介.doc','职业简介','介绍人工智能训练师职业定义与主要工作：数据收集和预处理、模型开发与优化、结果分析、报告撰写以及跨团队沟通。','帮助理解三级考试为什么同时考数据、模型、业务、报告和沟通指导。',['理解职业定义','理解数据与模型工作链路','理解报告和协作要求'],zip2),
+          ('06-assessment-plan.html','第1部分_人工智能训练师_3级_认定方案.doc','三级认定方案','规定正式职业技能等级认定的考试方式、题型、时长、分值和合格规则。','理论与操作技能分别达到60分及以上合格；理论90分钟，40判断+140单选+10多选，共190题、100分；实操总计120分钟、100分。',['记牢理论正式结构','按60分合格线训练','按120分钟安排实操'],zip2),
+          ('07-assessment-elements.html','第2部分_人工智能训练师_3级_认定要素细目表.doc','三级认定要素细目表','这是理论复习的核心范围文件，按细目点拆分三级知识要求。','官方权重包括：基本要求15%、业务分析20%、智能训练30%、智能系统设计30%、培训与指导5%。',['基本要求：职业道德、Windows/Office、法规','业务分析：采集、ETL、治理、流程','智能训练：清洗、标注、特征工程、算法测试','智能系统设计：分析、监控优化、人机交互','培训与指导：讲义、培训、指导'],zip2),
+          ('08-theory-review.html','第3部分-人工智能训练师_3级_理论知识复习题.docx','三级理论知识复习题','官方复习题覆盖判断、单选、多选，范围与认定要素细目表对应。','题库中明确涉及Python、Excel、SQL Server、requests、Pandas、NumPy、Matplotlib、Scikit-learn、TensorFlow、PyTorch、Apache Spark等工具或概念。',['先按五大知识域刷题','重点复盘错题对应细目点','编码工具既要会概念也要会应用判断'],zip2),
+          ('09-practical-review.html','第4部分_人工智能训练师_3级_操作技能复习题.doc','三级操作技能复习题','官方实操复习题以业务案例为载体，要求在Python/.ipynb环境中完成数据处理、模型开发与测试，并按要求提交文件。','常见任务包括CSV读取、分组统计、缺失/异常处理、标准化、特征选择、训练测试集划分、线性回归、随机森林、XGBoost、模型评估与报告。',['练熟Jupyter Notebook','练熟Pandas数据处理','练熟模型训练/预测/评估','练习JPG/CSV/PKL/TXT/DOCX/HTML交付'],zip2),
+          ('10-theory-mock.html','第5部分_人工智能训练师_3级_理论知识模拟试卷.docx','三级理论知识模拟试卷','用于按正式考试节奏进行90分钟理论模拟。','模拟卷结构与正式认定方案一致：判断40题、单选140题、多选10题，总分100分。',['严格计时90分钟','控制每题平均时间','交卷后按知识域复盘'],zip2),
+          ('11-practical-mock.html','第6部分_人工智能训练师_3级_操作技能模拟试卷.doc','三级操作技能模拟试卷','用于按正式实操节奏完成综合业务任务，训练过程、结果、报告和文件交付。','重点不是只写出代码，还要满足题目规定的文件名、保存位置、结果截图、模型文件和答题文档要求。',['严格按120分钟训练','先拿确定性代码分','边做边保存','最后检查文件命名与完整性'],zip2),
+          ]
+          css='''body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;margin:0;background:#f5f7fb;color:#172033;line-height:1.75}.hero{background:linear-gradient(135deg,#172554,#315efb);color:#fff;padding:34px 20px}.wrap{max-width:1000px;margin:auto;padding:20px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;margin:14px 0}.tag{display:inline-block;background:#ecfdf3;color:#067647;padding:4px 9px;border-radius:999px;font-size:12px}.btn{display:inline-block;background:#315efb;color:#fff;text-decoration:none;padding:9px 13px;border-radius:9px;margin:4px}.warn{background:#fff8e8;border-left:4px solid #d97706;padding:12px;border-radius:9px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}@media(max-width:760px){.grid{grid-template-columns:1fr}}'''
+          def page(title,filename,summary,facts,focus,src):
+              lis=''.join(f'<li>{escape(x)}</li>' for x in focus)
+              return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><style>{css}</style></head><body><div class="hero"><div class="wrap"><span class="tag">上海交大三级官方资料摘要页</span><h1>{escape(title)}</h1><div>{escape(filename)}</div></div></div><main class="wrap"><section class="card"><h2>文件说明</h2><p>{escape(summary)}</p></section><section class="card"><h2>核心信息</h2><p>{escape(facts)}</p></section><section class="card"><h2>备考重点</h2><ul>{lis}</ul></section><section class="card warn"><b>版权说明：</b>本页为备考摘要与索引，不复制发布官方文件全文或整套题库。请通过上海交大官方ZIP获取原文件。</section><p><a class="btn" href="{src}">下载上海交大官方ZIP</a><a class="btn" href="index.html">返回资料目录</a><a class="btn" href="../index.html">返回备考主页</a></p></main></body></html>'''
+          cards=[]
+          for slug,fn,title,summary,facts,focus,src in docs:
+              (out/slug).write_text(page(title,fn,summary,facts,focus,src),encoding='utf-8')
+              cards.append(f'<div class="card"><h3>{escape(title)}</h3><p>{escape(fn)}</p><a class="btn" href="{slug}">查看HTML摘要</a></div>')
+          index=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>上海交大三级官方资料HTML目录</title><style>{css}</style></head><body><div class="hero"><div class="wrap"><span class="tag">11个解压文件 · HTML摘要</span><h1>上海交大人工智能训练师三级官方资料</h1><p>解压文件已按网页形式整理为可阅读摘要页。</p></div></div><main class="wrap"><div class="warn"><b>说明：</b>以下页面不是官方文件全文镜像，而是逐文件整理的备考摘要、关键考点和官方原始下载入口。</div><div class="grid">{''.join(cards)}</div><p><a class="btn" href="../index.html">返回备考主页</a></p></main></body></html>'''
+          (out/'index.html').write_text(index,encoding='utf-8')
+          PY
+      - name: Add link to homepage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          if 'official-html/index.html' not in s:
+              s=s.replace('</div></div><main', '<a href="official-html/index.html">官方资料HTML</a></div></div><main',1)
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit generated pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add official-html index.html
+          git commit -m 'Add SJTU level 3 official HTML summary pages' || exit 0
+          git push
